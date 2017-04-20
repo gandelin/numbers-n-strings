@@ -10,7 +10,7 @@ function parseInput() {
     putNumber(val);
   }
   else {
-    var words = val.split( /\s+/ );
+    var words = val.split( /[\s,]+/ );
     // process multiple numerics
     for (var i=0;i<words.length;i++) {
       var word = words[i];
@@ -129,7 +129,7 @@ function updateStrDisplay() {
 function getWordCnt(sa) {
   var result = 0;
   if (sa) {
-    var words = sa.split( /\s+/ );
+    var words = sa.split( /[\s,]+/ );
     result = words.length;
   }
   return result;
