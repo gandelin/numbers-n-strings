@@ -10,13 +10,31 @@ function parseInput() {
     putNumber(val);
   }
   else {
-    putString(val);
+    var words = val.split( /\s+/ );
+    // process multiple numerics
+    for (var i=0;i<words.length;i++) {
+      var word = words[i];
+      if ($.isNumeric(word)) {
+        putNumber(word);
+      }
+    }
+    // process strings
+    for (var i=0;i<words.length;i++) {
+      var word = words[i];
+      if (!$.isNumeric(word)) {
+        // extract the string part remaining
+        var ix = val.indexOf(word);
+        var substr = val.substring(ix);
+        putString(substr);
+        break;
+      }
+    }
   }
 }
 
 // Put the number into the numbers array
 function putNumber(num) {
-  var aNum = parseInt(num);
+  var aNum = parseFloat(num);
   if (!isNaN(aNum)) {
     if(typeof(numbers) == "undefined") {
       numbers = [];
@@ -101,6 +119,8 @@ function putString(str) {
 
 // Update the Display for the string entries
 function updateStrDisplay() {
+  // clear out string(s)
+  $('textarea#myTextarea').val("");
   $('#myStrings').text(strings);
   $('#strEntries').text(strEntries);
   $('#wordcnt').text(getWordCnt(strings));
@@ -109,7 +129,7 @@ function updateStrDisplay() {
 function getWordCnt(sa) {
   var result = 0;
   if (sa) {
-    var words = sa.replace( /[^\w ]/g, "" ).split( /\s+/ );
+    var words = sa.split( /\s+/ );
     result = words.length;
   }
   return result;
