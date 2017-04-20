@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  padding 0;
+}
+
+header {
+  background-color: dodgerblue;
+  margin: 0;
+  padding: 0 0.5rem;
+}
+
+footer {
+  background-color: dodgerblue;
+  text-align: center;
+  margin: 0;
+  padding: 0 0.5rem;
+}
+
+label {
+  font-weight:  bold;
+}
+
+article {
+  height: 40rem;
+  margin: 0;
+  padding: 0 0.5rem;
+}
+
+.calculations {
+  display: block;
+  margin: 1rem 0;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Numbers and Strings</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles/stylesheet.css">
+  </head>
+  <body>
+    <header>
+      <h1>Numbers and Strings</h1>
+    </header>
+    <article>
+      <h4>Enter either a number or some strings:</h4>
+      <form name="myForm" onsubmit="parseInput()">
+        <textarea rows="1" cols="80" id="myTextarea"></textarea>
+          <input type="submit" value="Submit">
+          <input id="resetButton" type="button" value="Reset">
+        <h2>Number Results</h2>
+        <label class="calculations">Submitted: <span id="numbersId"></span></label>
+        <label class="calculations">Count: <span id="cnt"></span></label>
+        <label class="calculations">Sum: <span id="sum"></span></label>
+        <label class="calculations">Ave: <span id="ave"></span></label>
+        
+        <h2>String Results</h2>
+        <label class="calculations">Submitted: <span id="myStrings"></span></label>
+        <label class="calculations">Entries: <span id="strEntries"></span></label>
+        <label class="calculations">Words: <span id="wordcnt"></span></label>
+      </form>
+    </article>
+    <footer>
+      <p>HTML5-300 B Assignment 2, Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2017 Andelin Enterprises Inc.</p>
+    </footer>
+    <script type="application/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="https://use.fontawesome.com/81140c216b.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+  </body>
+</html>
