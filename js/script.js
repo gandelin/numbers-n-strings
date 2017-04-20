@@ -26,16 +26,17 @@ function putNumber(num) {
   } 
 }
 
-/*
-window.onload = function() {
-  $('#resetButton').onclick = function() {
+$(document).ready(function() { 
+  $('#resetButton').click(function() {
     // reset the numbers array
     numbers = [];
-    updateDisplay();
+    updateNumberDisplay();
+    
     strEntries = 0;
-  }  
-}
-*/
+    strings = "";
+    updateStrDisplay();
+  });
+});
 
 function updateNumberDisplay() {
   // clear out number
@@ -98,6 +99,7 @@ function putString(str) {
   updateStrDisplay();
 }
 
+// Update the Display for the string entries
 function updateStrDisplay() {
   $('#myStrings').text(strings);
   $('#strEntries').text(strEntries);
@@ -105,6 +107,10 @@ function updateStrDisplay() {
 }
 
 function getWordCnt(sa) {
-  var words = sa.replace( /[^\w ]/g, "" ).split( /\s+/ );
-  return words.length;
+  var result = 0;
+  if (sa) {
+    var words = sa.replace( /[^\w ]/g, "" ).split( /\s+/ );
+    result = words.length;
+  }
+  return result;
 }
